@@ -1,9 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 from flask_scss import Scss
 from flask_sqlalchemy import SQLAlchemy
-# , request, render_template
-# import requests
-# from bs4 import BeautifulSoup
+from datetime import datetime, timezone
+import requests
+from bs4 import BeautifulSoup
 
 # My App
 app = Flask(__name__)
