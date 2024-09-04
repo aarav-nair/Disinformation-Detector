@@ -39,7 +39,6 @@ def index():
     else:
         urls = website.query.order_by(website.created).all()
         return render_template("index.html", urls=urls)
-    return render_template("index.html")
 
 @app.route('/scrape', methods=['POST'])
 def scrape():
@@ -50,7 +49,6 @@ def scrape():
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
             content = soup.get_text(separator=' ', strip=True)
-            # content = ' '.join(content.split())
             content = manual_testing(url)
         else:
             content = "Error fetching the URL."
