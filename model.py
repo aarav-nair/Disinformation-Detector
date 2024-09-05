@@ -61,4 +61,4 @@ def manual_testing(news):
    pred_GBC = GBC.predict(new_xv_test)
    pred_RFC = RFC.predict(new_xv_test)
    all = [pred_LR, pred_DT, pred_GBC, pred_RFC]
-   return "Real" if sum(all) >= 2 else "Fake"
+   return "Likely Real News" if sum(all) >= 2 else "Likely Fake News"
